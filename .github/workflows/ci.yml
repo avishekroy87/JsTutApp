@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: npm run build
+      - name: Debug output
+        run: ls -la build/
+      - name: Install dependencies
+        run: npm install
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          path: dist/
