@@ -9,12 +9,15 @@ import FastForwardRounded from '@mui/icons-material/FastForwardRounded'
 import LoopRoundedIcon from '@mui/icons-material/LoopRounded'
 
 
-const [paused, setPaused] = useState<boolean>(true);
+
 
 
 
 
 const App: React.FC = () => {
+  const [paused, setPaused] = useState<boolean>(false);
+    const imgUrl = import.meta.env.REACT_APP_IMG_URL;
+
   return (
    <Card
   variant="outlined"
@@ -31,7 +34,7 @@ const App: React.FC = () => {
     width="100"
     height="100"
     alt="Contemplative Reptile album cover"
-    src={process.env.REACT_APP_IMG_URL}
+    src={imgUrl || 'https://via.placeholder.com/100'}
     sx={{    width: { xs: '100%', sm: 100 },
     }}
   />
