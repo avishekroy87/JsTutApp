@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
-import Menu from './common/Menu'
 import { Card, CardMedia, IconButton, Stack, Typography } from '@mui/material'
 import PlayArrowRounded from '@mui/icons-material/PlayArrowRounded'
 import PauseRounded from '@mui/icons-material/PauseRounded'
@@ -9,18 +8,11 @@ import FastRewindRounded from '@mui/icons-material/FastRewindRounded'
 import FastForwardRounded from '@mui/icons-material/FastForwardRounded'
 import LoopRoundedIcon from '@mui/icons-material/LoopRounded'
 
-let paused = true
-const setPaused = (value: boolean) => {
-  paused = value
-}
+
+const [paused, setPaused] = useState<boolean>(true);
 
 
-const items = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'Hire', href: '/hire' },
-]
+
 
 const App: React.FC = () => {
   return (
